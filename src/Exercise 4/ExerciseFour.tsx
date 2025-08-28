@@ -7,7 +7,7 @@ interface TodoItem {
 
 function ExerciseFour() {
 
-    const [input, setInput] = useState<String>('');
+    const [input, setInput] = useState<string>('');
 
     // Use the TodoItem interface to type the state array
     const [listItem, setListItem] = useState<TodoItem[]>([])
