@@ -1,0 +1,12 @@
+.input-color-picker {
+   border-bottom: 1px solid white;
+   color: white;
+}
+
+.input-color-picker:focus {
+    outline: none;
+}
+
+.custom-color-picker {
+    width: 100%;
+}

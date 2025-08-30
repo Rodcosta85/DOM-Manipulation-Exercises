@@ -56,13 +56,12 @@ function ExerciseSix() {
                 />
                 <ul className="w-full">
                     {filteredBikes.map((bike) => (
-                        <li key={bike} className="bg-gray-400 p-6 last-of-type:rounded-b-xl">
+                        <li key={bike} className="bg-gray-400 p-6 last-of-type:rounded-b-xl cursor-pointer">
                             {bike}
                         </li>
                     ))}
                 </ul>
             </div>
-
         </div>
     )
 }
