@@ -27,7 +27,9 @@ function ExerciseSix() {
         'triban',
         'van rysel',
         'thrust',
-        'willier'
+        'willier',
+        'audax',
+        'mosso'
     ])
 
     const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {

@@ -26,8 +26,8 @@ function ExerciseNine() {
                 />
             </button>
             <div className={showGallery ? 'flex justify-center items-center w-full h-full' : 'hidden'}>
-                <div className='bg-black absolute top-0 left-0 opacity-80 w-full h-full'></div>
-                <div className='bg-white min-w p-4 absolute top-[10%] left-[30%]'>
+                <div className='bg-black fixed top-0 left-0 opacity-80 w-full h-full'></div>
+                <div className='bg-white min-w p-4 fixed top-[10%] left-[30%]'>
                     <div className='flex justify-end pr-4'>
                         <button
                             className='self-end cursor-pointer bg-red-400 rounded-full w-6 h-6 text-white'

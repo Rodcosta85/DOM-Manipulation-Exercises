@@ -73,8 +73,10 @@ function ExerciseEight() {
     const handleAgeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const value = e.target.value;
         setAge(value);
-        console.log(value);
-        setIsAgeValid(ageRegex.test(value));
+        // console.log(value);
+
+        const ageNumber = Number(value);
+        setIsAgeValid(ageNumber >= 16 && ageNumber <= 95);
     }
 
 
@@ -134,7 +136,7 @@ function ExerciseEight() {
                             placeholder="email"
                             className='text-[12px] focus:outline-none border-b-white border-b-[0.5px] pb-[6px] w-full'
                         />
-                        <p className={!isEmailValid ? 'hidden' : 'block text-red-500 text-[11px]'}>This email format is not valid</p>
+                        <p className={isEmailValid ? 'hidden' : 'block text-red-500 text-[11px]'}>This email format is not valid</p>
                     </div>
                     {/* div for the EMAIL input  */}
 
@@ -148,7 +150,7 @@ function ExerciseEight() {
                             placeholder='age'
                             className='text-[12px] focus:outline-none border-b-white border-b-[0.5px] pb-[6px] w-full'
                         />
-                        <p className={!isAgeValid ? 'hidden' : 'block text-red-500 text-[11px]'}>This age interval is not allowed</p>
+                        <p className={isAgeValid ? 'hidden' : 'block text-red-500 text-[11px]'}>This age interval is not allowed</p>
                     </div>
                     {/* div for the AGE input  */}
 
