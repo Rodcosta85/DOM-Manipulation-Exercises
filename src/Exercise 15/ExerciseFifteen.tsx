@@ -60,7 +60,7 @@ function ExerciseFifteen() {
 
 
     return (
-        <div className='col-span-2 flex flex-col gap-3 border-[1.5px] border-gray-300 rounded-[6px] p-4'>
+        <div className='flex flex-col gap-3 border-[1.5px] border-gray-300 rounded-[6px] p-4'>
             <h1 className="font-semibold text-white">Exercise 15</h1>
             <p
                 className="text-white text-[14px]">Input a number and a currency dropdown; on change, convert the value to another currency

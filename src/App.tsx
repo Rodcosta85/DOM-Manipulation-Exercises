@@ -12,9 +12,11 @@ import ExerciseTenB from "./Exercise 10/ExerciseTenB.tsx"
 import ExerciseEleven from "./Exercise 11/ExerciseEleven.tsx";
 import ExerciseTwelve from "./Exercise 12/ExerciseTwelve.tsx";
 import ExerciseThirteen from "./Exercise 13/ExerciseThirteen.tsx";
+import ExerciseThirteenB from "./Exercise 13/ExerciseThirteenB.tsx";
 import ExerciseFourteen from "./Exercise 14/ExerciseFourteen.tsx";
 import ExerciseFifteen from "./Exercise 15/ExerciseFifteen.tsx";
-
+import ExerciseSeventeen from "./Exercise 17/ExerciseSeventeen.tsx";
+import ExerciseEighteen from "./Exercise 18/ExerciseEighteen.tsx";
 
 function App() {
 
@@ -34,8 +36,11 @@ function App() {
       <ExerciseEleven />
       <ExerciseTwelve />
       <ExerciseThirteen />
+      <ExerciseThirteenB />
       <ExerciseFourteen />
       <ExerciseFifteen />
+      <ExerciseSeventeen />
+      <ExerciseEighteen/>
     </div>
   )
 }

@@ -97,8 +97,8 @@ function ExerciseTenB() {
 
     return (
         <div className="col-span-2 flex flex-row justify-between gap-3 border-[1.5px] border-gray-300 rounded-[6px] p-4">
-            <div className='w-[100px]'>
-                <h1 className="font-semibold text-white">Exercise 10.b</h1>
+            <div className='w-[150px] flex flex-col gap-4'>
+                <h1 className="font-semibold text-white">Exercise 10.b and <span className='bg-red-400 pl-1 pr-1'>Exercise 16</span></h1>
                 <p className="text-white text-[14px]">Make a list where you can drag items to reorder them. Update the order dynamically.</p>
             </div>
 

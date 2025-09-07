@@ -30,9 +30,9 @@ function ExerciseNine() {
                 <div className='bg-white min-w p-4 fixed top-[10%] left-[30%]'>
                     <div className='flex justify-end pr-4'>
                         <button
-                            className='self-end cursor-pointer bg-red-400 rounded-full w-6 h-6 text-white'
+                            className='self-end cursor-pointer bg-red-400 rounded-[6px] w-6 h-6 text-white'
                             onClick={changeDisplay}>
-                            x
+                            X
                         </button>
                     </div>
 

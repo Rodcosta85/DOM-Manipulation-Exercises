@@ -24,7 +24,6 @@ function ExerciseFour() {
 
         if (input.trim() !== '') {
             const newTodo: TodoItem = {
-
                 id: crypto.randomUUID(), // Recommended for a unique, stable key
                 text: input,
             };
