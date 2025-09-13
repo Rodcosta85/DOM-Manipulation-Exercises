@@ -67,7 +67,10 @@ function App() {
 
   return (
     <div className="bg-blue-900 min-h-[100%] w-[100%] flex flex-col justify-center">
-      <div className="bg-white w-full h-16 fixed top-0 flex justify-between items-center pl-3 pr-3">
+      
+      
+      
+      <header className="bg-white w-full h-16 fixed top-0 flex justify-between items-center pl-3 pr-3">
         <h1 className="font-semibold">
           REACT TSX
           <span className="ml-[5px] text-green-600">EXERCISE LIST</span>
@@ -100,7 +103,10 @@ function App() {
             ))}
           </ul>
         </nav>
-      </div>
+      </header>
+
+
+
       <div className="flex flex-col gap-10 p-8 pt-24">
         {elementArr.map((item) => {
           const Element = item.element;
