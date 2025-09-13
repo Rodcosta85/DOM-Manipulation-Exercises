@@ -39,12 +39,12 @@ function ExerciseEighteen() {
   };
 
   return (
-    <div className='row-span-2 flex flex-col gap-3 border-[1.5px] border-gray-300 rounded-[6px] p-4 min-h'>
+    <div className='flex flex-col gap-3 border-[1.5px] border-gray-300 rounded-[6px] p-4 min-h'>
       <h1 className="font-semibold text-white">Exercise 18</h1>
       <p className="text-white text-[14px]">
         Allow users to add/remove fields dynamically on a form, then serialize the data into JSON on submit.
       </p>
-      <form className='flex flex-col gap-2'>
+      <div className='flex flex-col gap-2'>
         <div
           className={`flex flex-col gap-3 transition-all duration-300 ease-in-out ${selectTrigger ? 'h-[286px]' : 'h-[48px] overflow-hidden'}`}
         >
@@ -105,7 +105,7 @@ function ExerciseEighteen() {
 
         {/* Dynamically rendered form fields */}
         {fields.map((field, index) => (
-          <div key={index} className="flex flex-col gap-2">
+          <form key={index} className="flex flex-col gap-2">
             <label className="text-white capitalize">{field.type}:</label>
             <div className='flex gap-3'>
               <input
@@ -122,9 +122,14 @@ function ExerciseEighteen() {
                 X
               </button>
             </div>
-          </div>
+          </form>
         ))}
-      </form>
+        <button
+          className={`${fields.length !== 0 ? 'cursor-pointer bg-green-400 text-white rounded-[6px]' : 'hidden'} `}
+          type="button">
+          Submit
+        </button>
+      </div>
     </div>
   );
 }

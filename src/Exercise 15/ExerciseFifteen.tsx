@@ -65,7 +65,7 @@ function ExerciseFifteen() {
             <p
                 className="text-white text-[14px]">Input a number and a currency dropdown; on change, convert the value to another currency
                 using static rates.</p>
-            <div className='flex flex-row gap-10 w-full'>
+            <div className='flex flex-col gap-4 w-full'>
                 <input
                     value={input}
                     onChange={handleInput}
@@ -86,7 +86,9 @@ function ExerciseFifteen() {
                     ))}
                 </select>
 
-                <button onClick={handleConvert}>Converter</button>
+                <button 
+                className='cursor-pointer bg-green-400 text-white rounded-[6px]'
+                onClick={handleConvert}>Convert</button>
             </div>
             <p><b>RESULTADO: {resultado}</b></p>
         </div>

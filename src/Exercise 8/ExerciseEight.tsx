@@ -92,15 +92,15 @@ function ExerciseEight() {
             >
 
 
-                <div className='flex justify-between gap-2'>
+                <div className='flex gap-2 w-[100%]'>
                     {/* div for the NAME input  */}
-                    <div>
+                    <div className='w-[50%]'>
                         <input
                             type="text"
                             value={name}
                             onChange={handleNameChange}
                             placeholder='Your name'
-                            className='text-[12px] focus:outline-none border-b-white border-b-[0.5px] pb-[6px] w-full'
+                            className='text-[12px] text-white focus:outline-none border-b-white border-b-[0.5px] pb-[6px] w-full placeholder:text-white'
                         />
                         <p className={!isNameEmpty ? 'hidden' : 'block text-red-500 text-[11px]'}>This field is required</p>
                     </div>
@@ -108,13 +108,13 @@ function ExerciseEight() {
 
 
                     {/* div for the LAST NAME input  */}
-                    <div>
+                    <div className='w-[50%]'>
                         <input
                             type="text"
                             value={lastName}
                             onChange={handleLastNameChange}
                             placeholder='Your last name'
-                            className='text-[12px] focus:outline-none border-b-white border-b-[0.5px] pb-[6px] w-full'
+                            className='text-[12px] text-white focus:outline-none border-b-white border-b-[0.5px] pb-[6px] w-full placeholder:text-white'
                         />
                         <p className={!isLastNameEmpty ? 'hidden' : 'block text-red-500 text-[11px]'}>This field is required</p>
                     </div>
@@ -126,15 +126,15 @@ function ExerciseEight() {
 
 
 
-                <div className='flex justify-between gap-2'>
+                <div className='flex gap-2 w-[100%]'>
                     {/* div for the EMAIL input  */}
-                    <div>
+                    <div className='w-[50%]'>
                         <input
                             type="email"
                             value={email}
                             onChange={handleEmailChange}
                             placeholder="email"
-                            className='text-[12px] focus:outline-none border-b-white border-b-[0.5px] pb-[6px] w-full'
+                            className='text-[12px] text-white focus:outline-none border-b-white border-b-[0.5px] pb-[6px] w-full placeholder:text-white'
                         />
                         <p className={isEmailValid ? 'hidden' : 'block text-red-500 text-[11px]'}>This email format is not valid</p>
                     </div>
@@ -142,13 +142,13 @@ function ExerciseEight() {
 
 
                     {/* div for the AGE input  */}
-                    <div>
+                    <div className='w-[50%]'>
                         <input
-                            type="text"
+                            type="number"
                             value={age}
                             onChange={handleAgeChange}
                             placeholder='age'
-                            className='text-[12px] focus:outline-none border-b-white border-b-[0.5px] pb-[6px] w-full'
+                            className='text-[12px] text-white focus:outline-none border-b-white border-b-[0.5px] pb-[6px] w-full placeholder:text-white'
                         />
                         <p className={isAgeValid ? 'hidden' : 'block text-red-500 text-[11px]'}>This age interval is not allowed</p>
                     </div>

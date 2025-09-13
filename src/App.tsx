@@ -1,3 +1,7 @@
+import { Component, useState } from "react";
+
+import PlusX from '../public/plus-x.svg';
+
 import ExerciseOne from "./Exercise 1/ExerciseOne.tsx";
 import ExerciseTwo from "./Exercise 2/ExerciseTwo.tsx";
 import ExerciseThree from "./Exercise 3/ExerciseThree.tsx";
@@ -17,30 +21,97 @@ import ExerciseFourteen from "./Exercise 14/ExerciseFourteen.tsx";
 import ExerciseFifteen from "./Exercise 15/ExerciseFifteen.tsx";
 import ExerciseSeventeen from "./Exercise 17/ExerciseSeventeen.tsx";
 import ExerciseEighteen from "./Exercise 18/ExerciseEighteen.tsx";
+import ExerciseNineteen from "./Exercise 19/ExerciseNineteen.tsx";
+import ExerciseTwenty from "./Exercise 20/ExerciseTwenty.tsx";
+
+
+interface ComponentsProps {
+  id: string,
+  element: React.ReactElement,
+  title: string
+}
+
+
 
 function App() {
 
+  const [toggle, setToggle] = useState(true);
+  const [elementArr] = useState<ComponentsProps[]>([
+    { id: '1', element: <ExerciseOne />, title: 'Exercise 1' },
+    { id: '2', element: <ExerciseTwo />, title: 'Exercise 2' },
+    { id: '3', element: <ExerciseThree />, title: 'Exercise 3' },
+    { id: '4', element: <ExerciseFour />, title: 'Exercise 4' },
+    { id: '5', element: <ExerciseFive />, title: 'Exercise 5' },
+    { id: '6', element: <ExerciseSix />, title: 'Exercise 6' },
+    { id: '7', element: <ExerciseSeven />, title: 'Exercise 7' },
+    { id: '8', element: <ExerciseEight />, title: 'Exercise 8' },
+    { id: '9', element: <ExerciseNine />, title: 'Exercise 9' },
+    { id: '10', element: <ExerciseTen />, title: 'Exercise 10' },
+    { id: '10B', element: <ExerciseTenB />, title: 'Exercise 10B' },
+    { id: '11', element: <ExerciseEleven />, title: 'Exercise 11' },
+    { id: '12', element: <ExerciseTwelve />, title: 'Exercise 12' },
+    { id: '13', element: <ExerciseThirteen />, title: 'Exercise 13' },
+    { id: '13B', element: <ExerciseThirteenB />, title: 'Exercise 13B' },
+    { id: '14', element: <ExerciseFourteen />, title: 'Exercise 14' },
+    { id: '15', element: <ExerciseFifteen />, title: 'Exercise 15' },
+    { id: '17', element: <ExerciseSeventeen />, title: 'Exercise 17' },
+    { id: '18', element: <ExerciseEighteen />, title: 'Exercise 18' },
+    { id: '19', element: <ExerciseNineteen />, title: 'Exercise 19' },
+    { id: '20', element: <ExerciseTwenty />, title: 'Exercise 20' }
+  ])
+
+  const toggleNavOpen = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    setToggle(prevState => !prevState);
+  }
+
   return (
-    <div className="bg-blue-900 min-h-[100%] w-[100%] p-8 grid grid-cols-4 gap-10">
-      <ExerciseOne />
-      <ExerciseTwo />
-      <ExerciseThree />
-      <ExerciseFour />
-      <ExerciseFive />
-      <ExerciseSix />
-      <ExerciseSeven />
-      <ExerciseEight />
-      <ExerciseNine />
-      <ExerciseTen />
-      <ExerciseTenB />
-      <ExerciseEleven />
-      <ExerciseTwelve />
-      <ExerciseThirteen />
-      <ExerciseThirteenB />
-      <ExerciseFourteen />
-      <ExerciseFifteen />
-      <ExerciseSeventeen />
-      <ExerciseEighteen/>
+    <div className="bg-blue-900 min-h-[100%] w-[100%] flex flex-col justify-center">
+      <div className="bg-white w-full h-16 fixed top-0 flex justify-between items-center pl-3 pr-3">
+        <h1 className="font-semibold">
+          REACT TSX
+          <span className="ml-[5px] text-green-600">EXERCISE LIST</span>
+        </h1>
+        <button
+          onClick={toggleNavOpen}
+          className="cursor-pointer font-semibold flex gap-2"
+        >
+          EXERCISES LIST
+            <div className="rounded-full bg-fuchsia-400 flex items-center justify-center w-6 h-6">
+            <img 
+              src={PlusX} 
+              alt="a plus or close symbol depending if the menu is closed or open, respectively." 
+              className={`transition-transform duration-300 ${toggle ? 'rotate-0' : 'rotate-45'}`}
+            />
+            </div>
+          
+        </button>
+        <nav className={toggle ? 'hidden' : 'absolute right-[1.5%] top-[5rem] bg-white w-[10rem] rounded-[6px] p-3'}>
+          <ul className="flex flex-col gap-3 overflow-y-scroll h-[12rem]">
+            {elementArr.map((item) => (
+              <li key={item.id}>
+                <a
+                  className="cursor-pointer"
+                  href={`#${item.id}`}
+                >
+                  {item.title}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </div>
+      <div className="flex flex-col gap-10 p-8 pt-24">
+        {elementArr.map((item) => {
+          const Element = item.element;
+          return (
+            <section id={item.id} key={item.id}>
+              {/* Render the component */}
+              {Element}
+            </section>
+          );
+        })}
+      </div>
     </div>
   )
 }
