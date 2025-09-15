@@ -1,4 +1,4 @@
-import { Component, useState } from "react";
+import { useState } from "react";
 
 import PlusX from '../public/plus-x.svg';
 
@@ -23,6 +23,7 @@ import ExerciseSeventeen from "./Exercise 17/ExerciseSeventeen.tsx";
 import ExerciseEighteen from "./Exercise 18/ExerciseEighteen.tsx";
 import ExerciseNineteen from "./Exercise 19/ExerciseNineteen.tsx";
 import ExerciseTwenty from "./Exercise 20/ExerciseTwenty.tsx";
+import ExerciseTwentyOne from "./Exercise 21/ExerciseTwentyOne.tsx";
 
 
 interface ComponentsProps {
@@ -36,7 +37,7 @@ interface ComponentsProps {
 function App() {
 
   const [toggle, setToggle] = useState(true);
-  const [elementArr] = useState<ComponentsProps[]>([
+  const elementArr: ComponentsProps[] = [
     { id: '1', element: <ExerciseOne />, title: 'Exercise 1' },
     { id: '2', element: <ExerciseTwo />, title: 'Exercise 2' },
     { id: '3', element: <ExerciseThree />, title: 'Exercise 3' },
@@ -57,8 +58,9 @@ function App() {
     { id: '17', element: <ExerciseSeventeen />, title: 'Exercise 17' },
     { id: '18', element: <ExerciseEighteen />, title: 'Exercise 18' },
     { id: '19', element: <ExerciseNineteen />, title: 'Exercise 19' },
-    { id: '20', element: <ExerciseTwenty />, title: 'Exercise 20' }
-  ])
+    { id: '20', element: <ExerciseTwenty />, title: 'Exercise 20' },
+    { id: '21', element: <ExerciseTwentyOne />, title: 'Exercise 21' }
+  ]
 
   const toggleNavOpen = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
@@ -67,9 +69,6 @@ function App() {
 
   return (
     <div className="bg-blue-900 min-h-[100%] w-[100%] flex flex-col justify-center">
-      
-      
-      
       <header className="bg-white w-full h-16 fixed top-0 flex justify-between items-center pl-3 pr-3">
         <h1 className="font-semibold">
           REACT TSX
@@ -80,14 +79,13 @@ function App() {
           className="cursor-pointer font-semibold flex gap-2"
         >
           EXERCISES LIST
-            <div className="rounded-full bg-fuchsia-400 flex items-center justify-center w-6 h-6">
-            <img 
-              src={PlusX} 
-              alt="a plus or close symbol depending if the menu is closed or open, respectively." 
+          <div className="rounded-full bg-fuchsia-400 flex items-center justify-center w-6 h-6">
+            <img
+              src={PlusX}
+              alt="a plus or close symbol depending if the menu is closed or open, respectively."
               className={`transition-transform duration-300 ${toggle ? 'rotate-0' : 'rotate-45'}`}
             />
-            </div>
-          
+          </div>
         </button>
         <nav className={toggle ? 'hidden' : 'absolute right-[1.5%] top-[5rem] bg-white w-[10rem] rounded-[6px] p-3'}>
           <ul className="flex flex-col gap-3 overflow-y-scroll h-[12rem]">
@@ -105,14 +103,11 @@ function App() {
         </nav>
       </header>
 
-
-
       <div className="flex flex-col items-center gap-10 p-8 pt-24">
         {elementArr.map((item) => {
           const Element = item.element;
           return (
             <section id={item.id} key={item.id} className="w-[40%]">
-              {/* Render the component */}
               {Element}
             </section>
           );

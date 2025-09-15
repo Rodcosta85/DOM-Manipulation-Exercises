@@ -21,15 +21,15 @@ function ExerciseNineteen() {
             <div className='flex gap-4'>
                 <input
                     className='w-full h-20 border-white border-[1px] text-white'
-                    type="text" 
+                    type="text"
                     value={textArea}
                     onChange={handleTextAreaContent}
-                    />
-                <div className='w-full h-20 border-white border-[1px] text-white'>
-                    {textArea.startsWith('#') ? textResult : textArea}
-                </div>
+                />
+                <div
+                    className='w-full h-20 border-white border-[1px] text-white'
+                    dangerouslySetInnerHTML={{ __html: textResult }}
+                ></div>
             </div>
-
         </div>
     )
 }

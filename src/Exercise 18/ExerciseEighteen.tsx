@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import React from 'react';
+import type { ChangeEvent } from 'react';
 
 // Define the interface for the form fields
 interface FormFields {
@@ -17,26 +17,35 @@ function ExerciseEighteen() {
   // Function to toggle the visibility of the dropdown
   const triggerSelect = () => {
     setSelectTrigger(prevState => !prevState);
-  };
+  }
 
   // Function to add a new field to the form after a selection is made
   const handleSelection = (fieldType: string) => {
     setFields(prevFields => [...prevFields, { type: fieldType, value: '' }]);
     setSelectTrigger(false); // Hide the dropdown after a selection
-  };
+  }
 
   // Function to handle changes in the input fields
-  const handleInputChange = (index: number, event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInputChange = (index: number, event: ChangeEvent<HTMLInputElement>) => {
     const newFields = [...fields];
     newFields[index].value = event.target.value;
     setFields(newFields);
-  };
+  }
 
   // Function to remove a field from the form
   const handleRemove = (index: number) => {
     const newFields = fields.filter((_, i) => i !== index);
     setFields(newFields);
-  };
+  }
+
+  // resolução
+  const submit = () => {
+    const lista = fields.map(item => {
+      return [item.type, item.value];
+    });
+    const obj = Object.fromEntries(lista);
+    console.log(obj);
+  }
 
   return (
     <div className='flex flex-col gap-3 border-[1.5px] border-gray-300 rounded-[6px] p-4 min-h'>
@@ -104,29 +113,34 @@ function ExerciseEighteen() {
         </div>
 
         {/* Dynamically rendered form fields */}
-        {fields.map((field, index) => (
-          <form key={index} className="flex flex-col gap-2">
-            <label className="text-white capitalize">{field.type}:</label>
-            <div className='flex gap-3'>
-              <input
-                type={field.type === 'email' ? 'email' : 'text'}
-                value={field.value}
-                onChange={(e) => handleInputChange(index, e)}
-                className="border-b-[1px] border-b-gray-400 p-2 flex-grow focus:outline-none text-white"
-              />
-              <button
-                type="button"
-                onClick={() => handleRemove(index)}
-                className="bg-red-400 text-white pl-2 pr-2 cursor-pointer"
-              >
-                X
-              </button>
-            </div>
-          </form>
-        ))}
+        <form className="flex flex-col gap-2">
+          {fields.map((field, index) => (
+            <>
+              <label className="text-white capitalize">{field.type}:</label>
+              <div className='flex gap-3'>
+                <input
+                  type={field.type === 'email' ? 'email' : 'text'}
+                  value={field.value}
+                  onChange={(e) => handleInputChange(index, e)}
+                  className="border-b-[1px] border-b-gray-400 p-2 flex-grow focus:outline-none text-white"
+                />
+                <button
+                  type="button"
+                  onClick={() => handleRemove(index)}
+                  className="bg-red-400 text-white pl-2 pr-2 cursor-pointer"
+                >
+                  X
+                </button>
+              </div>
+            </>
+          ))}
+        </form>
+
         <button
           className={`${fields.length !== 0 ? 'cursor-pointer bg-green-400 text-white rounded-[6px]' : 'hidden'} `}
-          type="button">
+          type="button"
+          onClick={submit}
+        >
           Submit
         </button>
       </div>

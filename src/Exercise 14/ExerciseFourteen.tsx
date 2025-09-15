@@ -18,10 +18,7 @@ function ExerciseFourteen() {
 
     const toggleDiv = (id: number) => {
         setOpenId(prev => (prev === id ? null : id));
-    };
-
-
-
+    }
 
     return (
         <div className='flex flex-col gap-3 border-[1.5px] border-gray-300 rounded-[6px] p-4'>

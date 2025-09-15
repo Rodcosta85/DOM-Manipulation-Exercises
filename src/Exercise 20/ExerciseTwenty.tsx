@@ -18,8 +18,7 @@ function ExerciseTwenty() {
             setImageURL(URL.createObjectURL(e.target.files[0]));
         }
     }
-
-
+    
     return (
         <div className='col-span-2 row-span-2 flex flex-col gap-3 border-[1.5px] border-gray-300 rounded-[6px] p-4'>
             <h1 className="font-semibold text-white">Exercise 20</h1>

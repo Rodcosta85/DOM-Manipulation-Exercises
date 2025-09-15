@@ -28,9 +28,6 @@ function ExerciseThirteenB() {
 
     const [activeTab, setActiveTab] = useState<number>(0);
 
-
-
-
     return (
         <div className='flex flex-col gap-3 border-[1.5px] border-gray-300 rounded-[6px] p-4'>
             <h1 className="font-semibold text-white">Exercise 13.b</h1>
@@ -39,7 +36,7 @@ function ExerciseThirteenB() {
             <div>
                 <div className='flex flex-row gap-1'>
                     {tabsInfo.map((item, index) => (
-                        <div key={item}>
+                        <div key={index}>
                             <h2
                                 className={`transition-all duration-300 ease-in-out cursor-pointer rounded-tr-[6px] rounded-tl-[6px] w-fit pl-2 pr-2 ${activeTab === index ? 'bg-white font-semibold text-black' : 'text-gray-400'}`}
                                 onClick={() => setActiveTab(index)}>{item.title}
