@@ -107,11 +107,11 @@ function App() {
 
 
 
-      <div className="flex flex-col gap-10 p-8 pt-24">
+      <div className="flex flex-col items-center gap-10 p-8 pt-24">
         {elementArr.map((item) => {
           const Element = item.element;
           return (
-            <section id={item.id} key={item.id}>
+            <section id={item.id} key={item.id} className="w-[40%]">
               {/* Render the component */}
               {Element}
             </section>
