@@ -31,7 +31,7 @@ function ExerciseTwenty() {
                     ref={fileInputRef}
                     onChange={handleFile}
                 />
-                <button type="button" className='cursor-pointer text-white bg-amber-200 p-2' onClick={handleButtonClick}>
+                <button type="button" className='cursor-pointer bg-amber-200 p-2' onClick={handleButtonClick}>
                     Choose File
                 </button>
                 {selectedFile && (

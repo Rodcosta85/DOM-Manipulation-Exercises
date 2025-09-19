@@ -24,6 +24,8 @@ import ExerciseEighteen from "./Exercise 18/ExerciseEighteen.tsx";
 import ExerciseNineteen from "./Exercise 19/ExerciseNineteen.tsx";
 import ExerciseTwenty from "./Exercise 20/ExerciseTwenty.tsx";
 import ExerciseTwentyOne from "./Exercise 21/ExerciseTwentyOne.tsx";
+import ExerciseTwentyThree from "./Exercise 23/ExerciseTwentyThree.tsx";
+import ExerciseSlider from "./Exercise Slider/ExerciseSlider.tsx";
 
 
 interface ComponentsProps {
@@ -59,7 +61,9 @@ function App() {
     { id: '18', element: <ExerciseEighteen />, title: 'Exercise 18' },
     { id: '19', element: <ExerciseNineteen />, title: 'Exercise 19' },
     { id: '20', element: <ExerciseTwenty />, title: 'Exercise 20' },
-    { id: '21', element: <ExerciseTwentyOne />, title: 'Exercise 21' }
+    { id: '21', element: <ExerciseTwentyOne />, title: 'Exercise 21' },
+    { id: '23', element: <ExerciseTwentyThree />, title: 'Exercise 23' },
+    { id: 'slider', element: <ExerciseSlider />, title: "Exercise 'Slider'" },
   ]
 
   const toggleNavOpen = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -69,7 +73,7 @@ function App() {
 
   return (
     <div className="bg-blue-900 min-h-[100%] w-[100%] flex flex-col justify-center">
-      <header className="bg-white w-full h-16 fixed top-0 flex justify-between items-center pl-3 pr-3">
+      <header className="bg-white w-full h-16 fixed top-0 z-99 flex justify-between items-center pl-3 pr-3">
         <h1 className="font-semibold">
           REACT TSX
           <span className="ml-[5px] text-green-600">EXERCISE LIST</span>

@@ -37,7 +37,7 @@ function ExerciseTwentyOne() {
       />
       <button
         type="button"
-        className='cursor-pointer text-white bg-amber-200 p-2'
+        className='cursor-pointer bg-amber-200 p-2'
         onDrop={onDrop}
         onDragOver={(event) => event.preventDefault()}
       >
