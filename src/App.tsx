@@ -25,6 +25,7 @@ import ExerciseNineteen from "./Exercise 19/ExerciseNineteen.tsx";
 import ExerciseTwenty from "./Exercise 20/ExerciseTwenty.tsx";
 import ExerciseTwentyOne from "./Exercise 21/ExerciseTwentyOne.tsx";
 import ExerciseTwentyThree from "./Exercise 23/ExerciseTwentyThree.tsx";
+import ExerciseBonusTwo from "./Exercise BONUS/ExerciseBonusTwo.tsx";
 import ExerciseSlider from "./Exercise Slider/ExerciseSlider.tsx";
 
 
@@ -39,6 +40,7 @@ interface ComponentsProps {
 function App() {
 
   const [toggle, setToggle] = useState(true);
+  const [openObs, setOpenObs] = useState(false)
   const elementArr: ComponentsProps[] = [
     { id: '1', element: <ExerciseOne />, title: 'Exercise 1' },
     { id: '2', element: <ExerciseTwo />, title: 'Exercise 2' },
@@ -62,7 +64,12 @@ function App() {
     { id: '19', element: <ExerciseNineteen />, title: 'Exercise 19' },
     { id: '20', element: <ExerciseTwenty />, title: 'Exercise 20' },
     { id: '21', element: <ExerciseTwentyOne />, title: 'Exercise 21' },
+
+    // são esses 
     { id: '23', element: <ExerciseTwentyThree />, title: 'Exercise 23' },
+    { id: 'bonus2', element: <ExerciseBonusTwo />, title: 'Exercise Bonus #2' },
+    // são esses 
+
     { id: 'slider', element: <ExerciseSlider />, title: "Exercise 'Slider'" },
   ]
 
@@ -70,6 +77,12 @@ function App() {
     e.preventDefault();
     setToggle(prevState => !prevState);
   }
+
+  const toggleObsOpen = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    setOpenObs(prevState => !prevState);
+  }
+
 
   return (
     <div className="bg-blue-900 min-h-[100%] w-[100%] flex flex-col justify-center">
@@ -106,7 +119,14 @@ function App() {
           </ul>
         </nav>
       </header>
-
+      <button
+        onClick={toggleObsOpen}
+        className="fixed top-[80px] left-4 bg-red-500 text-white pl-2 pr-2 pt-0.5 pb-0.5 mr-1 rounded-[6px] cursor-pointer">
+        OBS
+      </button>
+      <p className={openObs ? 'fixed top-[120px] left-4 w-[12rem] p-3 bg-white rounded-[6px]' : 'hidden'}>
+        Exercises that are on the PDF and are not here have already been done elsewhere. The objective of this list was seeing new and different scenarios from previous times.
+      </p>
       <div className="flex flex-col items-center gap-10 p-8 pt-24">
         {elementArr.map((item) => {
           const Element = item.element;

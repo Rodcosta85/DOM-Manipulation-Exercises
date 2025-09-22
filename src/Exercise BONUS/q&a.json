@@ -1,0 +1,332 @@
+[
+    {
+        "id": 1,
+        "question": "What is the capital of France?",
+        "answers": [
+            {
+                "text": "Berlin",
+                "correct": false
+            },
+            {
+                "text": "Madrid",
+                "correct": false
+            },
+            {
+                "text": "Paris",
+                "correct": true
+            },
+            {
+                "text": "Rome",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "question": "Which planet is known as the Red Planet?",
+        "answers": [
+            {
+                "text": "Venus",
+                "correct": false
+            },
+            {
+                "text": "Mars",
+                "correct": true
+            },
+            {
+                "text": "Jupiter",
+                "correct": false
+            },
+            {
+                "text": "Mercury",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "question": "Who wrote the play 'Romeo and Juliet'?",
+        "answers": [
+            {
+                "text": "Charles Dickens",
+                "correct": false
+            },
+            {
+                "text": "William Shakespeare",
+                "correct": true
+            },
+            {
+                "text": "Mark Twain",
+                "correct": false
+            },
+            {
+                "text": "Jane Austen",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "question": "Which element has the chemical symbol 'O'?",
+        "answers": [
+            {
+                "text": "Gold",
+                "correct": false
+            },
+            {
+                "text": "Oxygen",
+                "correct": true
+            },
+            {
+                "text": "Osmium",
+                "correct": false
+            },
+            {
+                "text": "Zinc",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "question": "What is the largest ocean on Earth?",
+        "answers": [
+            {
+                "text": "Atlantic Ocean",
+                "correct": false
+            },
+            {
+                "text": "Pacific Ocean",
+                "correct": true
+            },
+            {
+                "text": "Indian Ocean",
+                "correct": false
+            },
+            {
+                "text": "Arctic Ocean",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "question": "Which country hosted the 2016 Summer Olympics?",
+        "answers": [
+            {
+                "text": "China",
+                "correct": false
+            },
+            {
+                "text": "Brazil",
+                "correct": true
+            },
+            {
+                "text": "United Kingdom",
+                "correct": false
+            },
+            {
+                "text": "Japan",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "question": "Which animal is known as the King of the Jungle?",
+        "answers": [
+            {
+                "text": "Tiger",
+                "correct": false
+            },
+            {
+                "text": "Elephant",
+                "correct": false
+            },
+            {
+                "text": "Lion",
+                "correct": true
+            },
+            {
+                "text": "Leopard",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "question": "What is the fastest land animal?",
+        "answers": [
+            {
+                "text": "Horse",
+                "correct": false
+            },
+            {
+                "text": "Cheetah",
+                "correct": true
+            },
+            {
+                "text": "Leopard",
+                "correct": false
+            },
+            {
+                "text": "Antelope",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "id": 9,
+        "question": "Which gas do plants absorb from the atmosphere?",
+        "answers": [
+            {
+                "text": "Oxygen",
+                "correct": false
+            },
+            {
+                "text": "Carbon Dioxide",
+                "correct": true
+            },
+            {
+                "text": "Nitrogen",
+                "correct": false
+            },
+            {
+                "text": "Hydrogen",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "id": 10,
+        "question": "In which year did the Titanic sink?",
+        "answers": [
+            {
+                "text": "1912",
+                "correct": true
+            },
+            {
+                "text": "1920",
+                "correct": false
+            },
+            {
+                "text": "1905",
+                "correct": false
+            },
+            {
+                "text": "1898",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "id": 11,
+        "question": "Who painted the Mona Lisa?",
+        "answers": [
+            {
+                "text": "Vincent van Gogh",
+                "correct": false
+            },
+            {
+                "text": "Pablo Picasso",
+                "correct": false
+            },
+            {
+                "text": "Leonardo da Vinci",
+                "correct": true
+            },
+            {
+                "text": "Michelangelo",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "id": 12,
+        "question": "What is the smallest prime number?",
+        "answers": [
+            {
+                "text": "0",
+                "correct": false
+            },
+            {
+                "text": "1",
+                "correct": false
+            },
+            {
+                "text": "2",
+                "correct": true
+            },
+            {
+                "text": "3",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "id": 13,
+        "question": "Which instrument has keys, pedals, and strings?",
+        "answers": [
+            {
+                "text": "Violin",
+                "correct": false
+            },
+            {
+                "text": "Guitar",
+                "correct": false
+            },
+            {
+                "text": "Piano",
+                "correct": true
+            },
+            {
+                "text": "Flute",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "id": 14,
+        "question": "Which continent is the Sahara Desert located on?",
+        "answers": [
+            {
+                "text": "Asia",
+                "correct": false
+            },
+            {
+                "text": "Africa",
+                "correct": true
+            },
+            {
+                "text": "Australia",
+                "correct": false
+            },
+            {
+                "text": "South America",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "id": 15,
+        "question": "How many sides does a hexagon have?",
+        "answers": [
+            {
+                "text": "Five",
+                "correct": false
+            },
+            {
+                "text": "Six",
+                "correct": true
+            },
+            {
+                "text": "Seven",
+                "correct": false
+            },
+            {
+                "text": "Eight",
+                "correct": false
+            }
+        ]
+    }
+]

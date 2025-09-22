@@ -52,7 +52,7 @@ function ExerciseSlider() {
                 <div className='flex flex-col gap-4 p-4 bg-slate-400 rounded-2xl'>
 
                     {/* This div will hold all the slides in a row and its overflow will be hidden */}
-                    <div className='overflow-hidden rounded-md w-[20rem]'>
+                    <div className='overflow-hidden rounded-md w-full'>
 
                         {/* This is the container that will actually slide */}
                         <div
@@ -61,7 +61,7 @@ function ExerciseSlider() {
                         >
                             {slideArr.map((item, index) => (
                                 <div
-                                    className='flex-none w-[20rem] flex flex-col gap-3 bg-white rounded-md p-4'
+                                    className='flex-none w-full flex flex-col gap-3 bg-white rounded-md p-4'
                                     key={index}
                                 >
                                     <h1 className="text-xl font-bold">{item.title}</h1>
@@ -76,7 +76,7 @@ function ExerciseSlider() {
 
                     <div className='flex flex-col gap-4'>
                         {/* pagination bar */}
-                        <div className='w-[100%] h-[0.3125rem] bg-white flex flex-row'>
+                        <div className='w-full h-[0.3125rem] bg-white flex flex-row'>
                             {slideArr.map((item, index) => (
                                 <button
                                     key={index}

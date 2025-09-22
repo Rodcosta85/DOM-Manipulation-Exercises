@@ -1,6 +1,7 @@
 import { useState } from 'react'
 // import type { ChangeEvent } from 'react';
 
+// imagens para os cards e para o botão de embaralhar.
 import Dog from './dog.png'
 import Cat from './cat.png'
 import Bird from './eagle.png'
@@ -10,6 +11,7 @@ import Fish from './fish.png'
 import Question from './question.png';
 import Shuffle from './shuffle.png';
 
+// interface para o array de objetos/cards.
 interface AnimalCards {
     id: number,
     questionMark: string,
@@ -18,8 +20,10 @@ interface AnimalCards {
 }
 
 function ExerciseTwentyThree() {
-
+    // estado que controla o botão de virar as cartas. Copilot resolveu essa, não entendi esse "record".
     const [cardToggle, setCardToggle] = useState<Record<number, boolean>>({});
+
+    // estado que segura os objetos/cards
     const [cardsArr, setCardsArr] = useState<AnimalCards[]>([
         { id: 9, questionMark: Question, img: Turtle, toggled: false },
         { id: 4, questionMark: Question, img: Cat, toggled: false },
@@ -34,20 +38,23 @@ function ExerciseTwentyThree() {
         { id: 11, questionMark: Question, img: Rat, toggled: false },
         { id: 8, questionMark: Question, img: Fish, toggled: false }
     ]);
+
+    // estado que controla quais cartas foram viradas ou não...entendi que precisava disso mas talvez não.
     const [flippedCardIds, setFlippedCardIds] = useState([]);
 
 
 
+    // preciso entender melhor essa função.
+    // Ela promove a virada dos cards para trás e para frente.
     const handleFlip = (id: number) => {
         setCardToggle(prev => ({
             ...prev,
             [id]: !prev[id]
         }));
-
-
-
     };
 
+    // função de embaralhar os cards. Está com problema ainda.
+    // quando os cards são embaralhados, o primeiro clicado ainda fica na sua posição original.
     const shuffleArr = (cardsArr: any) => {
         // Start from the last element and go backwards
         for (let i = cardsArr.length - 1; i > 0; i--) {
@@ -97,7 +104,6 @@ function ExerciseTwentyThree() {
                     <img src={Shuffle} alt="" className='w-[30px] h-[30px]' />
                 </button>
             </div>
-
         </div>
     )
 }

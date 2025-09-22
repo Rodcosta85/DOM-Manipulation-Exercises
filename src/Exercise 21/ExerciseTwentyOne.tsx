@@ -26,7 +26,8 @@ function ExerciseTwentyOne() {
   return (
     <div className='col-span-2 row-span-2 flex flex-col gap-3 border-[1.5px] border-gray-300 rounded-[6px] p-4'>
       <h1 className="font-semibold text-white" draggable>Exercise 21</h1>
-      <p className="text-white text-[14px]">Upload an image, select a rectangular crop area using mouse drag, and preview the cropped area.</p>
+      <p className="text-white text-[14px]">Build a search input that fetches suggestions from a public API (like GitHub users or movies)
+and shows them in a dropdown.</p>
 
       <input
         type="file"
