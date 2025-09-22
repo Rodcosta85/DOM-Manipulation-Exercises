@@ -16,53 +16,76 @@ interface AnimalCards {
     id: number,
     questionMark: string,
     img: string,
-    toggled: boolean
+    toggled: boolean,
+    animal: string,
+    posicao?: number,
 }
 
 function ExerciseTwentyThree() {
-    // estado que controla o botão de virar as cartas. Copilot resolveu essa, não entendi esse "record".
-    const [cardToggle, setCardToggle] = useState<Record<number, boolean>>({});
 
     // estado que segura os objetos/cards
     const [cardsArr, setCardsArr] = useState<AnimalCards[]>([
-        { id: 9, questionMark: Question, img: Turtle, toggled: false },
-        { id: 4, questionMark: Question, img: Cat, toggled: false },
-        { id: 7, questionMark: Question, img: Fish, toggled: false },
-        { id: 1, questionMark: Question, img: Bird, toggled: false },
-        { id: 12, questionMark: Question, img: Rat, toggled: false },
-        { id: 5, questionMark: Question, img: Dog, toggled: false },
-        { id: 2, questionMark: Question, img: Bird, toggled: false },
-        { id: 10, questionMark: Question, img: Turtle, toggled: false },
-        { id: 6, questionMark: Question, img: Dog, toggled: false },
-        { id: 3, questionMark: Question, img: Cat, toggled: false },
-        { id: 11, questionMark: Question, img: Rat, toggled: false },
-        { id: 8, questionMark: Question, img: Fish, toggled: false }
+        { id: 9, questionMark: Question, img: Turtle, animal: "turtle", toggled: false },
+        { id: 10, questionMark: Question, img: Turtle, animal: "turtle", toggled: false },
+        { id: 1, questionMark: Question, img: Bird, animal: "bird", toggled: false },
+        { id: 2, questionMark: Question, img: Bird, animal: "bird", toggled: false },
+        { id: 11, questionMark: Question, img: Rat, animal: "rat", toggled: false },
+        { id: 12, questionMark: Question, img: Rat, animal: "rat", toggled: false },
+        { id: 5, questionMark: Question, img: Dog, animal: "dog", toggled: false },
+        { id: 6, questionMark: Question, img: Dog, animal: "dog", toggled: false },
+        { id: 4, questionMark: Question, img: Cat, animal: "cat", toggled: false },
+        { id: 3, questionMark: Question, img: Cat, animal: "cat", toggled: false },
+        { id: 8, questionMark: Question, img: Fish, animal: "fish", toggled: false },
+        { id: 7, questionMark: Question, img: Fish, animal: "fish", toggled: false },
     ]);
 
-    // estado que controla quais cartas foram viradas ou não...entendi que precisava disso mas talvez não.
-    const [flippedCardIds, setFlippedCardIds] = useState([]);
-
+    const [started, setStarted] = useState(false);
 
 
     // preciso entender melhor essa função.
     // Ela promove a virada dos cards para trás e para frente.
-    const handleFlip = (id: number) => {
-        setCardToggle(prev => ({
-            ...prev,
-            [id]: !prev[id]
-        }));
+    const handleFlip = (id: number, animal: string) => {
+        const cardsArrFlipped = cardsArr.map(item => {
+            if (item.id === id) {
+                return { ...item, toggled: true }
+            }
+            return item;
+        });
+        setCardsArr(cardsArrFlipped);
+        setStarted(true);
+
+        if (started) {
+            // verificar se o par está virado também
+            const pair = cardsArrFlipped.find(item => item.animal === animal && item.id !== id);
+            const pairFlipped = pair?.toggled;
+
+            // se o par estiver virado não faça nada
+            // se o par não estiver virado, desvire a carta clicada depois de 2 segundos
+            if (!pairFlipped) {
+                setTimeout(() => {
+                    const cardsArrUnflipped = cardsArr.map(item => {
+                        if (item.id === id) {
+                            return { ...item, toggled: false }
+                        }
+                        return item;
+                    });
+                    setCardsArr(cardsArrUnflipped);
+                }, 2000);
+                return;
+            }
+
+            setStarted(false);
+        }
     };
 
     // função de embaralhar os cards. Está com problema ainda.
     // quando os cards são embaralhados, o primeiro clicado ainda fica na sua posição original.
-    const shuffleArr = (cardsArr: any) => {
-        // Start from the last element and go backwards
-        for (let i = cardsArr.length - 1; i > 0; i--) {
-            // Pick a random index from 0 to i (inclusive)
-            const j = Math.floor(Math.random() * (i + 1));
-            [cardsArr[i], cardsArr[j]] = [cardsArr[j], cardsArr[i]];
-        }
-        console.log(cardsArr);
+    const shuffleArr = () => {
+        const cardsWithNumbers = cardsArr.map(item => {
+            return { ...item, posicao: Math.random() }
+        });
+        const sortedCards = cardsWithNumbers.sort((a, b) => a.posicao - b.posicao);
+        setCardsArr(sortedCards);
     }
 
 
@@ -77,29 +100,28 @@ function ExerciseTwentyThree() {
                         key={item.id}
                         className='group w-full h-[8rem]'
                     >
-                        <div className={`relative h-full w-full transition-transform duration-500 [transform-style:preserve-3d] ${cardToggle[item.id] ? 'rotate-y-180' : ''}`}>
+                        <div className={`relative h-full w-full transition-transform duration-500 [transform-style:preserve-3d] ${item.toggled ? 'rotate-y-180' : ''}`}>
                             <button
                                 className='bg-orange-300 rounded-[6px] absolute inset-0 backface-hidden flex items-center justify-center'
-                                onClick={() => handleFlip(item.id)}
+                                onClick={() => handleFlip(item.id, item.animal)}
                             >
                                 <img src={Question} alt="" className='w-[50px] h-[50px]' />
                             </button>
                             <button
                                 className='bg-red-400 rounded-[6px] absolute inset-0 [transform:rotateY(180deg)] backface-hidden flex items-center justify-center'
-                                onClick={() => handleFlip(item.id)}
+                                onClick={() => handleFlip(item.id, item.animal)}
                             >
                                 <img src={item.img} alt="animal" className='w-[50px] h-[50px]' />
                             </button>
                         </div>
                     </div>
-
                 ))}
             </div>
             <div className='flex justify-center mt-2 mb-2'>
                 <button
                     type='button'
                     className='bg-green-400 hover:transform hover:translate-y-[4px] text-white w-fit pl-3 pr-3 pt-1 pb-1 rounded-[6px] cursor-pointer'
-                    onClick={() => shuffleArr(cardsArr)}
+                    onClick={shuffleArr}
                 >
                     <img src={Shuffle} alt="" className='w-[30px] h-[30px]' />
                 </button>

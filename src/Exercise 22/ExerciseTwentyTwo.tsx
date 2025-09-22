@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 
-function ExerciseTwentyOne() {
+function ExerciseTwentyTwo() {
 
   const [img, setImg] = useState("");
 
@@ -17,24 +17,19 @@ function ExerciseTwentyOne() {
 
   const onDrop = async (e: any) => {
     e.preventDefault();
-    console.log(e.dataTransfer.files[0]);
     const base64 = await getBase64(e.dataTransfer.files[0]);
-    console.log(base64);
     setImg(base64);
   }
 
   return (
     <div className='col-span-2 row-span-2 flex flex-col gap-3 border-[1.5px] border-gray-300 rounded-[6px] p-4'>
-      <h1 className="font-semibold text-white" draggable>Exercise 21</h1>
-      <p className="text-white text-[14px]">Build a search input that fetches suggestions from a public API (like GitHub users or movies)
-and shows them in a dropdown.</p>
+      <h1 className="font-semibold text-white" draggable>Exercise 22</h1>
+      <p className="text-white text-[14px]">Build a search input that fetches suggestions from a public API (like GitHub users or movies) and shows them in a dropdown.</p>
 
       <input
         type="file"
         className='hidden'
-        onDrop={e => console.log(e)}
         ref={fileInputRef}
-        // onChange={handleFile}
       />
       <button
         type="button"
@@ -50,4 +45,4 @@ and shows them in a dropdown.</p>
   );
 }
 
-export default ExerciseTwentyOne;
+export default ExerciseTwentyTwo;

@@ -2,6 +2,7 @@
     {
         "id": 1,
         "question": "What is the capital of France?",
+        "isCorrect": false,
         "answers": [
             {
                 "text": "Berlin",
@@ -24,6 +25,7 @@
     {
         "id": 2,
         "question": "Which planet is known as the Red Planet?",
+        "isCorrect": false,
         "answers": [
             {
                 "text": "Venus",
@@ -46,6 +48,7 @@
     {
         "id": 3,
         "question": "Who wrote the play 'Romeo and Juliet'?",
+        "isCorrect": false,
         "answers": [
             {
                 "text": "Charles Dickens",
@@ -68,6 +71,7 @@
     {
         "id": 4,
         "question": "Which element has the chemical symbol 'O'?",
+        "isCorrect": false,
         "answers": [
             {
                 "text": "Gold",
@@ -90,6 +94,7 @@
     {
         "id": 5,
         "question": "What is the largest ocean on Earth?",
+        "isCorrect": false,
         "answers": [
             {
                 "text": "Atlantic Ocean",
@@ -112,6 +117,7 @@
     {
         "id": 6,
         "question": "Which country hosted the 2016 Summer Olympics?",
+        "isCorrect": false,
         "answers": [
             {
                 "text": "China",
@@ -134,6 +140,7 @@
     {
         "id": 7,
         "question": "Which animal is known as the King of the Jungle?",
+        "isCorrect": false,
         "answers": [
             {
                 "text": "Tiger",
@@ -156,6 +163,7 @@
     {
         "id": 8,
         "question": "What is the fastest land animal?",
+        "isCorrect": false,
         "answers": [
             {
                 "text": "Horse",
@@ -178,6 +186,7 @@
     {
         "id": 9,
         "question": "Which gas do plants absorb from the atmosphere?",
+        "isCorrect": false,
         "answers": [
             {
                 "text": "Oxygen",
@@ -200,6 +209,7 @@
     {
         "id": 10,
         "question": "In which year did the Titanic sink?",
+        "isCorrect": false,
         "answers": [
             {
                 "text": "1912",
@@ -222,6 +232,7 @@
     {
         "id": 11,
         "question": "Who painted the Mona Lisa?",
+        "isCorrect": false,
         "answers": [
             {
                 "text": "Vincent van Gogh",
@@ -244,6 +255,7 @@
     {
         "id": 12,
         "question": "What is the smallest prime number?",
+        "isCorrect": false,
         "answers": [
             {
                 "text": "0",
@@ -266,6 +278,7 @@
     {
         "id": 13,
         "question": "Which instrument has keys, pedals, and strings?",
+        "isCorrect": false,
         "answers": [
             {
                 "text": "Violin",
@@ -288,6 +301,7 @@
     {
         "id": 14,
         "question": "Which continent is the Sahara Desert located on?",
+        "isCorrect": false,
         "answers": [
             {
                 "text": "Asia",
@@ -310,6 +324,7 @@
     {
         "id": 15,
         "question": "How many sides does a hexagon have?",
+        "isCorrect": false,
         "answers": [
             {
                 "text": "Five",
