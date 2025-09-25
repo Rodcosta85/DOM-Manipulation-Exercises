@@ -8,6 +8,7 @@ function ExerciseFive() {
     const [inputVal, setInputVal] = useState('');
     const [eye, setEye] = useState<string>(EyeClosed);
 
+    // essa função checa se o estado que controla o input (inputType) está como password, trocando ele pra texto, assim nos mostrando a senha que estava escondida
     const handleEye = () => {
         if (inputType === 'password') {
             setInputType('text');
@@ -32,6 +33,7 @@ function ExerciseFive() {
             <p className="text-white text-[14px]">You can hide the password by clicking on the eye button.</p>
             <div className='flex flex-row justify-between items-center gap-[8px] bg-white rounded-[6px] p-2'>
                 <input
+                    // tipo é alterado por meio do estado que controla ele e pela função handleEye que o altera
                     type={inputType}
                     className="w-[100%] h-5 p-2 bg-white rounded-[6px] focus:outline-none"
                     value={inputVal}

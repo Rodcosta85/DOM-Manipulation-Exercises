@@ -1,31 +1,21 @@
 import { useState } from 'react'
 
 function ExerciseEight() {
-
     const [name, setName] = useState<string>('');
     const [isNameEmpty, setIsNameEmpty] = useState(false);
-
-
 
     const [lastName, setLastName] = useState<string>('');
     const [isLastNameEmpty, setIsLastNameEmpty] = useState(false);
 
-
-
     const [email, setEmail] = useState<string>('');
-    const [isEmailValid, setIsEmailValid] = useState(false);
+    const [isEmailValid, setIsEmailValid] = useState(true);
     // regex de email
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
-
-
     const [age, setAge] = useState<string>('');
-    const [isAgeValid, setIsAgeValid] = useState(false);
+    const [isAgeValid, setIsAgeValid] = useState(true);
     // regex de idade entre 16 e 95
     const ageRegex = /^(1[6-9]|[2-8][0-9]|9[0-5])$/;
-
-
-
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -79,7 +69,6 @@ function ExerciseEight() {
         setIsAgeValid(ageNumber >= 16 && ageNumber <= 95);
     }
 
-
     return (
         <div className='flex flex-col justify-between gap-3 border-[1.5px] border-gray-300 rounded-[6px] p-4'>
             <h1 className="font-semibold text-white">Exercise 8</h1>
@@ -90,8 +79,6 @@ function ExerciseEight() {
                 onSubmit={handleSubmit}
                 className='flex flex-col gap-2'
             >
-
-
                 <div className='flex gap-2 w-[100%]'>
                     {/* div for the NAME input  */}
                     <div className='w-[50%]'>
@@ -105,7 +92,6 @@ function ExerciseEight() {
                         <p className={!isNameEmpty ? 'hidden' : 'block text-red-500 text-[11px]'}>This field is required</p>
                     </div>
                     {/* div for the NAME input  */}
-
 
                     {/* div for the LAST NAME input  */}
                     <div className='w-[50%]'>
@@ -121,11 +107,6 @@ function ExerciseEight() {
                     {/* div for the LAST NAME input  */}
                 </div>
 
-
-
-
-
-
                 <div className='flex gap-2 w-[100%]'>
                     {/* div for the EMAIL input  */}
                     <div className='w-[50%]'>
@@ -140,7 +121,6 @@ function ExerciseEight() {
                     </div>
                     {/* div for the EMAIL input  */}
 
-
                     {/* div for the AGE input  */}
                     <div className='w-[50%]'>
                         <input
@@ -153,13 +133,7 @@ function ExerciseEight() {
                         <p className={isAgeValid ? 'hidden' : 'block text-red-500 text-[11px]'}>This age interval is not allowed</p>
                     </div>
                     {/* div for the AGE input  */}
-
                 </div>
-
-
-
-
-
 
                 {/* CLEAR and SUBMIT buttons */}
                 <div className='flex items-center justify-end gap-1'>
@@ -176,9 +150,6 @@ function ExerciseEight() {
                     </button>
                 </div>
                 {/* div that holds both buttons */}
-
-
-
 
             </form>
         </div>

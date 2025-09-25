@@ -1,9 +1,11 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 
 
 function ExerciseSix() {
-
+    // estado que controla o input
     const [input, setInput] = useState<string>('')
+
+    // array que possui todos os tipos de bike
     const [bikeArr] = useState<string[]>([
         'trek',
         'cannondale',
@@ -36,10 +38,13 @@ function ExerciseSix() {
         setInput(e.target.value);
     }
 
+    // filtro
     const filteredBikes =
         input === ""
             ? [] // nothing by default
+            // o método filtro leva um parametro (pode ser qualquer palavra, usei "brand" como exemplo)
             : bikeArr.filter((brand) =>
+                // jogamos brand para minúsculo e checamos se começa com o valor do input no minúsculo também
                 brand.toLowerCase().startsWith(input.toLowerCase())
             );
 
@@ -57,6 +62,7 @@ function ExerciseSix() {
                     placeholder='Search for your bike'
                 />
                 <ul className="w-full">
+                    {/* mapeamos o nosso array de bicicletas, mostrando as que estão de acordo com a regra criada dentro do filteredBikes */}
                     {filteredBikes.map((bike) => (
                         <li
                             key={bike}

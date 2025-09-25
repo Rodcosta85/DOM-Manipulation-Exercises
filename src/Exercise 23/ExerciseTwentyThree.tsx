@@ -1,5 +1,4 @@
-import { useState } from 'react'
-// import type { ChangeEvent } from 'react';
+import { useState, useRef, useEffect } from 'react'
 
 // imagens para os cards e para o botão de embaralhar.
 import Dog from './dog.png'
@@ -19,31 +18,28 @@ interface AnimalCards {
     toggled: boolean,
     animal: string,
     posicao?: number,
+    matched: boolean
 }
 
 function ExerciseTwentyThree() {
-
     // estado que segura os objetos/cards
     const [cardsArr, setCardsArr] = useState<AnimalCards[]>([
-        { id: 9, questionMark: Question, img: Turtle, animal: "turtle", toggled: false },
-        { id: 10, questionMark: Question, img: Turtle, animal: "turtle", toggled: false },
-        { id: 1, questionMark: Question, img: Bird, animal: "bird", toggled: false },
-        { id: 2, questionMark: Question, img: Bird, animal: "bird", toggled: false },
-        { id: 11, questionMark: Question, img: Rat, animal: "rat", toggled: false },
-        { id: 12, questionMark: Question, img: Rat, animal: "rat", toggled: false },
-        { id: 5, questionMark: Question, img: Dog, animal: "dog", toggled: false },
-        { id: 6, questionMark: Question, img: Dog, animal: "dog", toggled: false },
-        { id: 4, questionMark: Question, img: Cat, animal: "cat", toggled: false },
-        { id: 3, questionMark: Question, img: Cat, animal: "cat", toggled: false },
-        { id: 8, questionMark: Question, img: Fish, animal: "fish", toggled: false },
-        { id: 7, questionMark: Question, img: Fish, animal: "fish", toggled: false },
+        { id: 6, questionMark: Question, img: Dog, animal: "dog", toggled: false, matched: false },
+        { id: 12, questionMark: Question, img: Rat, animal: "rat", toggled: false, matched: false },
+        { id: 4, questionMark: Question, img: Cat, animal: "cat", toggled: false, matched: false },
+        { id: 9, questionMark: Question, img: Turtle, animal: "turtle", toggled: false, matched: false },
+        { id: 1, questionMark: Question, img: Bird, animal: "bird", toggled: false, matched: false },
+        { id: 7, questionMark: Question, img: Fish, animal: "fish", toggled: false, matched: false },
+        { id: 2, questionMark: Question, img: Bird, animal: "bird", toggled: false, matched: false },
+        { id: 10, questionMark: Question, img: Turtle, animal: "turtle", toggled: false, matched: false },
+        { id: 11, questionMark: Question, img: Rat, animal: "rat", toggled: false, matched: false },
+        { id: 8, questionMark: Question, img: Fish, animal: "fish", toggled: false, matched: false },
+        { id: 3, questionMark: Question, img: Cat, animal: "cat", toggled: false, matched: false },
+        { id: 5, questionMark: Question, img: Dog, animal: "dog", toggled: false, matched: false }
     ]);
 
     const [started, setStarted] = useState(false);
 
-
-    // preciso entender melhor essa função.
-    // Ela promove a virada dos cards para trás e para frente.
     const handleFlip = (id: number, animal: string) => {
         const cardsArrFlipped = cardsArr.map(item => {
             if (item.id === id) {
@@ -70,10 +66,16 @@ function ExerciseTwentyThree() {
                         return item;
                     });
                     setCardsArr(cardsArrUnflipped);
-                }, 2000);
-                return;
+                }, 100);
             }
-
+            else {
+                setCardsArr(prev => prev.map(card => {
+                    if (card.animal === animal) {
+                        return { ...card, matched: true };
+                    }
+                    return card;
+                }));
+            }
             setStarted(false);
         }
     };
@@ -98,17 +100,17 @@ function ExerciseTwentyThree() {
                 {cardsArr.map((item) => (
                     <div
                         key={item.id}
-                        className='group w-full h-[8rem]'
+                        className={`group w-full h-[8rem] ${item.matched ? 'hidden' : ''}`}
                     >
                         <div className={`relative h-full w-full transition-transform duration-500 [transform-style:preserve-3d] ${item.toggled ? 'rotate-y-180' : ''}`}>
                             <button
-                                className='bg-orange-300 rounded-[6px] absolute inset-0 backface-hidden flex items-center justify-center'
+                                className={`bg-orange-300 rounded-[6px] absolute inset-0 backface-hidden flex items-center justify-center`}
                                 onClick={() => handleFlip(item.id, item.animal)}
                             >
                                 <img src={Question} alt="" className='w-[50px] h-[50px]' />
                             </button>
                             <button
-                                className='bg-red-400 rounded-[6px] absolute inset-0 [transform:rotateY(180deg)] backface-hidden flex items-center justify-center'
+                                className={`bg-red-400 rounded-[6px] absolute inset-0 [transform:rotateY(180deg)] backface-hidden flex items-center justify-center`}
                                 onClick={() => handleFlip(item.id, item.animal)}
                             >
                                 <img src={item.img} alt="animal" className='w-[50px] h-[50px]' />

@@ -6,22 +6,17 @@ interface TodoItem {
 }
 
 function ExerciseFour() {
-
     const [input, setInput] = useState<string>('');
 
     // Use the TodoItem interface to type the state array
     const [listItem, setListItem] = useState<TodoItem[]>([])
-
-
     const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
         setInput(e.target.value);
         console.log(input);
     }
 
     const addItemsToList = (e: React.MouseEvent<HTMLButtonElement>) => {
-
         e.preventDefault(); // Prevents page reload if inside a form
-
         if (input.trim() !== '') {
             const newTodo: TodoItem = {
                 id: crypto.randomUUID(), // Recommended for a unique, stable key
@@ -30,12 +25,10 @@ function ExerciseFour() {
 
             // Use the spread syntax to create a new array with the new item
             setListItem([...listItem, newTodo]);
-            
-            setInput(''); // Clear the input field
+            // Clear the input field
+            setInput(''); 
         }
     }
-
-
 
     return (
         <div className='flex flex-col justify-between gap-3 border-[1.5px] border-gray-300 rounded-[6px] p-4'>
@@ -58,7 +51,6 @@ function ExerciseFour() {
                 {listItem.map((item) => (
                     <li key={item.id} className='text-[14px] text-white list-disc placeholder:text-gray-400'>{item.text}</li>
                 ))}
-
             </ul>
         </div>
     )

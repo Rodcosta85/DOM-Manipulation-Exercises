@@ -15,17 +15,12 @@ function ExerciseTwelve() {
     }
 
     // start countdown
-    // mas como fazer para receber segundos também?
     const handleStart = () => {
         const minutes = parseInt(input, 10);
         if (!isNaN(minutes) && minutes > 0) {
             setTime(Date.now() + minutes * 60 * 1000); // convert to ms
         }
     };
-
-    // const handlePause = () => {
-
-    // }
 
     const renderer = ({ minutes, seconds, completed }: any) => {
         if (completed) {
@@ -37,7 +32,6 @@ function ExerciseTwelve() {
             </span>
         );
     };
-
 
     return (
         <div className='flex flex-col gap-3 border-[1.5px] border-gray-300 rounded-[6px] p-4'>
@@ -55,7 +49,6 @@ function ExerciseTwelve() {
             <button
                 onClick={handleStart}
                 className='bg-red-400 text-white pt-1 pb-1 pl-2 pr-2'
-
             >
                 Start
             </button>

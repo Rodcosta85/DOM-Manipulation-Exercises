@@ -9,6 +9,7 @@ function ExerciseThree() {
         setSelectedOption(e.target.value);
     }
 
+    // objeto que guarda as cores e os valores correspondentes do tailwind
     const colorClasses: Record<string, string> = {
         blue: 'bg-blue-500',
         red: 'bg-red-500',
@@ -27,6 +28,8 @@ function ExerciseThree() {
                 id=""
                 value={selectedOption}
                 onChange={handleOptionChosen}
+
+                // com a bracket notation [ ] podemos pegar o index do nosso objeto. Então nesse caso estamos selecionado a selectedOption (a cor escolhida) pelo usuário que está dentro do objeto
                 className={`focus:outline-none p-3 border-2 border-white ${colorClasses[selectedOption]} appearance-none`}>
                 <option value="blue" className='text-white'>Blue 500</option>
                 <option value="red" className='text-white'>Red 500</option>

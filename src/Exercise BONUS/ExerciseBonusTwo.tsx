@@ -24,8 +24,8 @@ function ExerciseBonusTwo() {
     const [questions, setQuestions] = useState<Group[]>(GameShowInfo);
 
     const handleCorrectQuestion = (id: number, answer: number) => {
-        
-    }
+
+    };
 
     return (
         <div className='flex flex-col gap-3 border-[1.5px] border-gray-300 rounded-[6px] p-4'>
@@ -66,7 +66,7 @@ function ExerciseBonusTwo() {
                                 className={`w-full pt-1 pb-1 pl-4 pr-2 rounded-[20px] cursor-pointer text-left ${isCorrect ? 'bg-green-400' : 'bg-white'}`}
                             >
                                 {item.answers[2].text}
-                            </button>                     
+                            </button>
                         </div>
                         <div className="flex gap-2 items-center">
                             <img src={NumberFour} alt="" className="w-6 h-6" />

@@ -8,6 +8,7 @@ interface tabsProps {
 
 function ExerciseThirteenB() {
 
+    // estado que guarda as informações das tabs
     const [tabsInfo] = useState<tabsProps[]>([
         {
             id: 1,
@@ -26,6 +27,7 @@ function ExerciseThirteenB() {
         }
     ])
 
+    // estado que guarda o número da tab ativa
     const [activeTab, setActiveTab] = useState<number>(0);
 
     return (
@@ -39,12 +41,14 @@ function ExerciseThirteenB() {
                         <div key={index}>
                             <h2
                                 className={`transition-all duration-300 ease-in-out cursor-pointer rounded-tr-[6px] rounded-tl-[6px] w-fit pl-2 pr-2 ${activeTab === index ? 'bg-white font-semibold text-black' : 'text-gray-400'}`}
-                                onClick={() => setActiveTab(index)}>{item.title}
+                                // seta o estado porém baseando-se no index do array, ou seja, na tab escolhida
+                                onMouseEnter={() => setActiveTab(index)}>{item.title}
                             </h2>
                         </div>
                     ))}
                 </div>
                 <div className='bg-white rounded-b-[6px] p-2'>
+                    {/* id e textos setados de acordo com o arrav das tabs passando o estado activeTab como o index */}
                     <p>id: {tabsInfo[activeTab].id}</p>
                     <p>{tabsInfo[activeTab].text}</p>
                 </div>

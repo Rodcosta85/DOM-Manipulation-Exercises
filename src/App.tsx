@@ -23,7 +23,6 @@ import ExerciseSeventeen from "./Exercise 17/ExerciseSeventeen.tsx";
 import ExerciseEighteen from "./Exercise 18/ExerciseEighteen.tsx";
 import ExerciseNineteen from "./Exercise 19/ExerciseNineteen.tsx";
 import ExerciseTwenty from "./Exercise 20/ExerciseTwenty.tsx";
-import ExerciseTwentyTwo from "./Exercise 22/ExerciseTwentyTwo.tsx";
 import ExerciseTwentyThree from "./Exercise 23/ExerciseTwentyThree.tsx";
 import ExerciseBonusTwo from "./Exercise BONUS/ExerciseBonusTwo.tsx";
 import ExerciseSlider from "./Exercise Slider/ExerciseSlider.tsx";
@@ -63,13 +62,8 @@ function App() {
     { id: '18', element: <ExerciseEighteen />, title: 'Exercise 18' },
     { id: '19', element: <ExerciseNineteen />, title: 'Exercise 19' },
     { id: '20', element: <ExerciseTwenty />, title: 'Exercise 20' },
-    { id: '22', element: <ExerciseTwentyTwo />, title: 'Exercise 22' },
-
-    // são esses 
     { id: '23', element: <ExerciseTwentyThree />, title: 'Exercise 23' },
     { id: 'bonus2', element: <ExerciseBonusTwo />, title: 'Exercise Bonus #2' },
-    // são esses 
-
     { id: 'slider', element: <ExerciseSlider />, title: "Exercise 'Slider'" },
   ]
 

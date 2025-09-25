@@ -2,17 +2,17 @@ import { useState } from 'react'
 
 function ExerciseFifteen() {
 
-    // const [atual, setAtual] = useState('');
-    const [nova, setNova] = useState('');
+    // estado para controlar o valor das moedas
+    const [currency, setCurrency] = useState('');
+
+    // estado para o resultado
     const [resultado, setResultado] = useState(0);
 
+    // estado para o input
     const [input, setInput] = useState('');
 
+    // array que guarda as moedas
     const currencies = [
-        // {
-        //     label: "Brasil(R$)",
-        //     value: "brl"
-        // },
         {
             label: "USA($)",
             value: "usa"
@@ -41,19 +41,20 @@ function ExerciseFifteen() {
 
     const handleConvert = () => {
         const value = Number(input);
-        if (nova === "usa") {
+        if (currency === "usa") {
+            // operação de acordo com o valor da moeda de acordo com o real brasileiro
             setResultado(value / 5);
         }
-        if (nova === "euro") {
+        if (currency === "euro") {
             setResultado(value / 6);
         }
-        if (nova === "uk") {
+        if (currency === "uk") {
             setResultado(value / 6);
         }
-        if (nova === "rus") {
+        if (currency === "rus") {
             setResultado(value * 14);
         }
-        if (nova === "jpn") {
+        if (currency === "jpn") {
             setResultado(value * 27);
         }
     }
@@ -73,24 +74,23 @@ function ExerciseFifteen() {
                     placeholder='insert your value here'
                     className='focus:outline-none text-white border-b-white border-b-[1px]'
                 />
-
-                {/* <select className='focus:outline-none' onChange={e => setAtual(e.target.value)}>
+                <select
+                    className='focus:outline-none text-white'
+                    onChange={e => setCurrency(e.target.value)}
+                >
                     {currencies.map((item) => (
-                        <option key={item.value} value={item.value}>{item.label}</option>
-                    ))}
-                </select> */}
-
-                <select className='focus:outline-none' onChange={e => setNova(e.target.value)}>
-                    {currencies.map((item) => (
-                        <option key={item.value} value={item.value}>{item.label}</option>
+                        <option
+                            key={item.value}
+                            value={item.value}>
+                            {item.label}
+                        </option>
                     ))}
                 </select>
-
-                <button 
-                className='cursor-pointer bg-green-400 text-white rounded-[6px]'
-                onClick={handleConvert}>Convert</button>
+                <button
+                    className='cursor-pointer bg-green-400 text-white rounded-[6px]'
+                    onClick={handleConvert}>Convert</button>
             </div>
-            <p><b>RESULTADO: {resultado}</b></p>
+            <p className='text-white'><b>RESULTADO: {resultado}</b></p>
         </div>
     )
 }
